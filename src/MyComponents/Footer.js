@@ -7,11 +7,11 @@ import {
 export const Footer = () => {
     return (
         <Box>
-            <h4 style={{ color: 'white',
+            <h5 style={{ color: 'white',
                 textAlign: "center",
-                marginTop: "-1px" }}>
+                marginTop: "-1px"}}>
                 © Developed for Major Project @SNU
-            </h4>
+            </h5>
             <Container>
 
             </Container>
