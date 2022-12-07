@@ -9,6 +9,7 @@ export const SearchPage = () => {
     const [answers, setAnswers] = useState([])
     const [isSearching, setIsSearching] = useState(false)
     const [detectedLang, setDetectedLang] = useState("")
+    const [cacheHit, setCacheHit] = useState("")
     const [checked, setChecked] = React.useState(false);
 
     const clickSearchButton = (e) => {
@@ -22,6 +23,7 @@ export const SearchPage = () => {
             setAnswers(res.data.responses)
             setDetectedLang(res.data.source_lang)
             setIsSearching(false)
+            setCacheHit(res.data.cache_hit)
         })
     }
 
@@ -65,6 +67,8 @@ export const SearchPage = () => {
                 </div>
                 <p>Total Answers Found: {answers.length}</p>
                 <p>Detected Language: {detectedLang}</p>
+                <p>{cacheHit}</p>
+                <p>Retrieved from: {!cacheHit? "Model":"Cache"}</p>
                 <table className="table">
                     <thead>
                     <tr>
